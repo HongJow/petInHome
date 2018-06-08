@@ -10,6 +10,7 @@
 #include<linux/slab.h>
 
 #define GPIO1 18
+#define SOUND_DOUT_PIN 3 
 #define DEV_NAME "ledtest_dev"
 #define DEV_NUM 250
 #define COUNT_READ _IOR(100, 0, int)
@@ -52,14 +53,28 @@ ssize_t ledtest_read(struct file *pfile, char __user *buffer, size_t length, lof
 
 	printk("count: %d\n", count);
 
-	char StrCount[2];
-	StrCount[0] = '0' + count;
-	StrCount[1] = '\0';
+	char *StrCount;
+	StrCount = (char *)kmalloc(32, GFP_KERNEL);
+	int *tmp;
+	tmp = (int *)kmalloc(32, GFP_KERNEL);
+	int n = 0, i = 0;
+	while(count > 1){
+		tmp[n] = (count % 10);
+		n = n+1;
+		count = count / 10;
+	}
+	n--;
+	while(n >= 0){
+		StrCount[i] = '0' + tmp[n];
+		i++;
+		n--;
+	}
+	StrCount[i] = '\0';
+	printk("StrCount: %s\n", StrCount);
+
+	copy_to_user(buffer, StrCount, sizeof(char) * i);
 	
-	copy_to_user(buffer, StrCount, length);
-	
-	printk("copyto success : msg : %s, buffer: %s\n", msg, buffer);
-	printk("copyto success : msg : %s, buffer: %s\n", msg, buffer);
+	printk("copyto success : StrCount : %s, buffer: %s\n", StrCount, buffer);
 	
 	task = kthread_run(sound_thread, NULL, "sound thread");
 
@@ -75,7 +90,7 @@ int sound_thread(void *data){
 	count = 0;
 	int seq = 0;
 	while(1){
-		int value = gpio_get_value(3);
+		int value = gpio_get_value(SOUND_DOUT_PIN);
 		//printk("gpio value = %d\n", value);
 		
 		if(value == 0){
@@ -122,10 +137,10 @@ int __init ledtest_init(void){
 		return -1;
 	}
 	
-	if(gpio_request(3, "3") < 0){
+	if(gpio_request(SOUND_DOUT_PIN, "SOUND_DOUT_PIN") < 0){
 		printk("gpio_request fail\n");
 	}
-	if(gpio_direction_input(3) < 0){
+	if(gpio_direction_input(SOUND_DOUT_PIN) < 0){
 		printk("gpio_direction_input fail\n");
 	}
 	
