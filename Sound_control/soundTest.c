@@ -26,12 +26,9 @@ int main(){
 	printf("type string:");
 	scanf("%[^\n]%*c",stringToSend);
 	printf("Writing messags [%s].\n", stringToSend);
-
-	if(write(fd, stringToSend, strlen(stringToSend)) < 0){
-		perror("Failed to write the message to the device.");
-		return errno;
+	if(write(fd,stringToSend,strlen(stringToSend))){
+		perror("write err");
 	}
-
 	printf("Reading from the device..\n");
 
 	if(read(fd, receive, BUFFER_LENGTH) < 0){
@@ -39,10 +36,7 @@ int main(){
 		return errno;
 	}
 
-
-	ioctl(fd, COUNT_READ, receive);
-
-	printf("The received message is: [%c]\n", receive);
+	printf("The received message is: [%s]\n", receive);
 	printf("End of program\n");
 
 	return 0;

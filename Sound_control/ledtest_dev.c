@@ -37,11 +37,11 @@ int ledtest_open(struct inode *pinode, struct file *pfile){
 ssize_t ledtest_write(struct file *pfile, const char __user *buffer, size_t length, loff_t *offset){
 	printk("Write simple char drv\n");
 	
-	if(copy_from_user(msg, buffer, length)){
+	if(copy_from_user(msg, buffer,4)){
 		printk("Write error\n");
 		return -1;
 	}
-	printk("copyfrom success\n");
+	printk("copyfrom success\nmsg : %s\n",msg);
 	return length;
 }
 
@@ -49,20 +49,18 @@ ssize_t ledtest_read(struct file *pfile, char __user *buffer, size_t length, lof
 	printk("Read ledtest drv\n");
 
 	kthread_stop(task);
-
+	int a = 123;
+	char* temp = (char*)a;
+	printk("temp : %s",temp);
 	printk("count: %d\n", count);
-
-	char StrCount[2];
-	StrCount[0] = '0' + count;
-	StrCount[1] = '\0';
-	
-	copy_to_user(buffer, StrCount, length);
+	strcpy(msg,"asdf");
+	copy_to_user(buffer,msg , length);
 	
 	printk("copyto success : msg : %s, buffer: %s\n", msg, buffer);
-	printk("copyto success : msg : %s, buffer: %s\n", msg, buffer);
-	
+	printk("copyto success : msg : %s, buffer: %s\n", msg, buffer);	
 	task = kthread_run(sound_thread, NULL, "sound thread");
-
+	kfree (msg);
+	msg = (char*)kmalloc(32,GFP_KERNEL);
 	return 0;
 }
 
@@ -135,9 +133,7 @@ int __init ledtest_init(void){
 }
 void __exit ledtest_exit(void){
 	printk(KERN_ALERT "Exit ledtest_dev\n");
-	if(msg){
-		kfree(msg);
-	}
+	kfree(msg);
 	kthread_stop(task);
 	gpio_free(3);
 	unregister_chrdev(DEV_NUM, DEV_NAME);
