@@ -1,8 +1,8 @@
-cmd_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o := gcc -Wp,-MD,/home/pi/Sysprg_teamPrj/petInHome/Sound_control/.ledtest_dev.o.d  -nostdinc -isystem /usr/lib/gcc/arm-linux-gnueabihf/6/include -I./arch/arm/include -I./arch/arm/include/generated/uapi -I./arch/arm/include/generated  -I./include -I./arch/arm/include/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -fno-ipa-sra -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -Wno-frame-address -O2 --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -Werror=incompatible-pointer-types  -DMODULE  -DKBUILD_BASENAME='"ledtest_dev"'  -DKBUILD_MODNAME='"ledtest_dev"' -c -o /home/pi/Sysprg_teamPrj/petInHome/Sound_control/.tmp_ledtest_dev.o /home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.c
+cmd_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.o := gcc -Wp,-MD,/home/pi/Sysprg_teamPrj/petInHome/Sound_control/.sound_dev.o.d  -nostdinc -isystem /usr/lib/gcc/arm-linux-gnueabihf/6/include -I./arch/arm/include -I./arch/arm/include/generated/uapi -I./arch/arm/include/generated  -I./include -I./arch/arm/include/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -fno-ipa-sra -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -Wno-frame-address -O2 --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -Werror=incompatible-pointer-types  -DMODULE  -DKBUILD_BASENAME='"sound_dev"'  -DKBUILD_MODNAME='"sound_dev"' -c -o /home/pi/Sysprg_teamPrj/petInHome/Sound_control/.tmp_sound_dev.o /home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.c
 
-source_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o := /home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.c
+source_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.o := /home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.c
 
-deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o := \
+deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.o := \
   include/linux/gpio.h \
     $(wildcard include/config/gpiolib.h) \
     $(wildcard include/config/arch/have/custom/gpio/h.h) \
@@ -787,6 +787,6 @@ deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o := \
     $(wildcard include/config/debug/kmemleak.h) \
   include/linux/kasan.h \
 
-/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o: $(deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o)
+/home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.o: $(deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.o)
 
-$(deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o):
+$(deps_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/sound_dev.o):

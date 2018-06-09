@@ -1,1 +1,0 @@
-cmd_/home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.ko /home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.o /home/pi/Sysprg_teamPrj/petInHome/Sound_control/ledtest_dev.mod.o ;  true

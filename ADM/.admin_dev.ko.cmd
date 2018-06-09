@@ -1,0 +1,1 @@
+cmd_/home/pi/Sysprg_teamPrj/petInHome/ADM/admin_dev.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/pi/Sysprg_teamPrj/petInHome/ADM/admin_dev.ko /home/pi/Sysprg_teamPrj/petInHome/ADM/admin_dev.o /home/pi/Sysprg_teamPrj/petInHome/ADM/admin_dev.mod.o ;  true

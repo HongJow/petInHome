@@ -21,23 +21,15 @@ __attribute__((section("__versions"))) = {
 	{ 0x44b1c7de, __VMLINUX_SYMBOL_STR(param_ops_int) },
 	{ 0xa3d00cec, __VMLINUX_SYMBOL_STR(cdev_del) },
 	{ 0x6bc3fbc0, __VMLINUX_SYMBOL_STR(__unregister_chrdev) },
-	{ 0xfe990052, __VMLINUX_SYMBOL_STR(gpio_free) },
-	{ 0x137c3884, __VMLINUX_SYMBOL_STR(gpiod_direction_input) },
-	{ 0x47229b5c, __VMLINUX_SYMBOL_STR(gpio_request) },
-	{ 0x32fed8fb, __VMLINUX_SYMBOL_STR(cdev_add) },
-	{ 0x3550970d, __VMLINUX_SYMBOL_STR(cdev_init) },
-	{ 0xd8e484f0, __VMLINUX_SYMBOL_STR(register_chrdev_region) },
-	{ 0xb3f7646e, __VMLINUX_SYMBOL_STR(kthread_should_stop) },
-	{ 0x12a38747, __VMLINUX_SYMBOL_STR(usleep_range) },
-	{ 0xcf08282d, __VMLINUX_SYMBOL_STR(gpiod_get_raw_value) },
-	{ 0x3d9835a6, __VMLINUX_SYMBOL_STR(gpio_to_desc) },
-	{ 0xf4fa543b, __VMLINUX_SYMBOL_STR(arm_copy_to_user) },
-	{ 0xf6f5580, __VMLINUX_SYMBOL_STR(kmem_cache_alloc_trace) },
-	{ 0xfd6d346, __VMLINUX_SYMBOL_STR(kmalloc_caches) },
 	{ 0x37a0cba, __VMLINUX_SYMBOL_STR(kfree) },
-	{ 0xbb004d68, __VMLINUX_SYMBOL_STR(wake_up_process) },
-	{ 0xdf49127f, __VMLINUX_SYMBOL_STR(kthread_create_on_node) },
-	{ 0xfc8f865a, __VMLINUX_SYMBOL_STR(kthread_stop) },
+	{ 0x32fed8fb, __VMLINUX_SYMBOL_STR(cdev_add) },
+	{ 0xf6f5580, __VMLINUX_SYMBOL_STR(kmem_cache_alloc_trace) },
+	{ 0x3550970d, __VMLINUX_SYMBOL_STR(cdev_init) },
+	{ 0xbed0c678, __VMLINUX_SYMBOL_STR(__register_chrdev) },
+	{ 0xfd6d346, __VMLINUX_SYMBOL_STR(kmalloc_caches) },
+	{ 0xf4fa543b, __VMLINUX_SYMBOL_STR(arm_copy_to_user) },
+	{ 0x97255bdf, __VMLINUX_SYMBOL_STR(strlen) },
+	{ 0xe914e41e, __VMLINUX_SYMBOL_STR(strcpy) },
 	{ 0xfa2a45e, __VMLINUX_SYMBOL_STR(__memzero) },
 	{ 0x28cc25db, __VMLINUX_SYMBOL_STR(arm_copy_from_user) },
 	{ 0x2e5810c6, __VMLINUX_SYMBOL_STR(__aeabi_unwind_cpp_pr1) },
@@ -51,4 +43,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "E679FBDFF5D755B094E05E5");
+MODULE_INFO(srcversion, "99C0186303AB3F070EF37D4");

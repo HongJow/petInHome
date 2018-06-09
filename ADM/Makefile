@@ -1,6 +1,6 @@
 KERNELDIR = /lib/modules/$(shell uname -r)/build
 
-obj-m := sound_dev.o
+obj-m := admin_dev.o
 
 PWD := $(shell pwd)
 
